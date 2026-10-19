@@ -1,8 +1,6 @@
 import "../styles/globals.css";
 import { ReactNode } from "react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import WhatsappButton from "./components/WhatsappButton";
+import SiteChrome from "./components/SiteChrome";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -15,10 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsappButton />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );
