@@ -1,10 +1,11 @@
 import Hero from "./components/Hero";
 import FeatureList from "./components/FeatureList";
+import TreatmentCalculator from "./components/TreatmentCalculator";
 import Gallery from "./components/Gallery";
 import Testimonial from "./components/Testimonial";
 import ServiceCard from "./components/ServiceCard";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function Home() {
   const featuredServices = [
@@ -41,6 +42,7 @@ export default function Home() {
     <>
       <Hero />
       <FeatureList />
+      <TreatmentCalculator />
 
       {/* Ringkasan Layanan */}
       <section className="py-20 bg-slate-50/60 border-t border-purple-100/60">
@@ -79,28 +81,30 @@ export default function Home() {
       <Testimonial />
 
       {/* Final Call To Action Banner */}
-      <section className="py-18 bg-gradient-to-r from-purple-900 via-purple-800 to-pink-800 text-white text-center relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-purple-950 via-slate-950 to-pink-950 text-white text-center relative overflow-hidden border-t border-purple-900/50">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl pointer-events-none" />
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur border border-white/15 text-pink-200 text-xs font-semibold mb-5">
-            <Sparkles className="w-3.5 h-3.5 text-pink-300" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur border border-white/15 text-pink-300 text-xs font-bold mb-5">
+            <Sparkles className="w-3.5 h-3.5 text-pink-400" />
             <span>Tampil Percaya Diri dengan Sepatu Bersih</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 tracking-tight leading-tight text-white">
             Jangan Biarkan Sneaker Kotor Merusak Penampilanmu
           </h2>
-          <p className="text-purple-100 text-base sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-            Konsultasikan kondisi sepatu Anda sekarang secara gratis ke team ahli <strong>shoeVive</strong> atau langsung pesan dan lacak statusnya.
+          <p className="text-purple-100/90 text-base sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+            Konsultasikan kondisi sepatu Anda sekarang secara gratis ke team ahli <strong>shoeVive</strong> atau langsung pesan dan lacak status pengerjaan secara real-time.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/booking"
-              className="w-full sm:w-auto bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold px-8 py-3.5 rounded-xl shadow-xl shadow-pink-900/30 transition transform hover:-translate-y-0.5"
+              className="w-full sm:w-auto bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-xl shadow-pink-900/40 transition transform hover:-translate-y-0.5"
             >
               Booking Cuci Sekarang
             </Link>
             <Link
               href="/order-tracking"
-              className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-3.5 rounded-xl border border-white/20 transition"
+              className="w-full sm:w-auto bg-white/10 hover:bg-white/15 text-white font-semibold px-7 py-3.5 rounded-xl border border-white/15 backdrop-blur transition hover:border-pink-300/50"
             >
               Lacak Pesanan Saya
             </Link>

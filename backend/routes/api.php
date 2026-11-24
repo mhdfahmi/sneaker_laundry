@@ -34,6 +34,9 @@ Route::middleware('auth:sanctum')->prefix('admin')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
 
+    // Dashboard & Analitik Pendapatan
+    Route::get('/dashboard', [AdminOrderController::class, 'dashboard']);
+
     // Pesanan
     Route::get('/orders', [AdminOrderController::class, 'index']);
     Route::patch('/orders/{id}/status', [AdminOrderController::class, 'updateStatus']);
